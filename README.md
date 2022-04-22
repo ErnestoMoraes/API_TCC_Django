@@ -15,9 +15,10 @@ cd API_TCC_Django
 python3 -m venv .venv
 
 >Linux
-    `source .venv/bin/activate`
+    `source .venv/bin/activate`.
+    
 >Windows
-    ./.venv/Scripts/activate
+    `./.venv/Scripts/activate`.
 
 pip install -r requirements.txt :
     pip install -U pip - Update em PIP
