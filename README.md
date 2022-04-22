@@ -78,5 +78,43 @@ Entrar em API_TCC_Django\myproject\settings.py:
     STATIC_URL = 'static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+mkdir -p .\myproject\core\static\css
+criar arquivo .\myproject\core\static\css\main.css
+
+mkdir -p .\myproject\core\templates\includes
+criar arquivo .\myproject\core\templates\includes\nav.html
+
+criar arquivos .\myproject\core\templates\{base, index}.html
+
+Adicionar ao API_TCC_Django\myproject\core\templates\base.html:
+https://github.com/rg3915/django-simples/blob/master/myproject/core/templates/base.html
+
+Adicionar ao API_TCC_Django\myproject\core\templates\index.html:
+https://github.com/rg3915/django-simples/blob/master/myproject/core/templates/index.html
+
+Adicionar ao API_TCC_Django\myproject\core\templates\includes\nav.html:
+https://github.com/rg3915/django-simples/blob/master/myproject/core/templates/includes/nav.html
+
+Para fazer funcionar:
+cd myproject\urls.py
+Adicionar: 
+    from myproject.core.views import index
+
+    urlpatterns = [
+        path('', index, name='index'),
+        path('admin/', admin.site.urls),
+    ]
+
+cd myproject\core\views.py
+    from django.shortcuts import render
+    from django.contrib.auth.models import User
 
 
+    def index(request):
+        users = User.objects.all()
+        context = {'object_list': users}
+        template_name = 'index.html'
+        return render(request, template_name, context)
+
+Testar:
+    
