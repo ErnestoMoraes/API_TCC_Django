@@ -9,9 +9,9 @@ Construção de uma API em Django usando Python.
 * Instale as dependências.
 * Rode as migrações.
 
-git clone git@github.com:ErnestoMoraes/API_TCC_Django.git
-cd API_TCC_Django
-python3 -m venv .venv
+git clone git@github.com:ErnestoMoraes/API_TCC_Django.git &nbsp;
+cd API_TCC_Django &nbsp;
+python3 -m venv .venv &nbsp;
 Linux
     source .venv/bin/activate
 Windows
